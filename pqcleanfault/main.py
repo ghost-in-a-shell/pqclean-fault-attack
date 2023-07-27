@@ -1,0 +1,2 @@
+import modeqs
+modeqs.mytest()
