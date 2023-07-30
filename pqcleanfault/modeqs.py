@@ -343,7 +343,7 @@ def random_test(times):
 
             matrix.append(array)
 
-        run_test(mod, solution, matrix)
+        run_test(mod, matrix)
 
 def static_test_ex():
     mod = 37
@@ -365,7 +365,7 @@ def static_test_ex():
         [ 43,   2,   1,  29,  47,  48,  28,  37,  10,  23,  35,  34,  37,  44,  35],
     ]
 
-    run_test(mod, solution, matrix)
+    run_test(mod,  matrix)
 
 def static_test():
     mod = 26
@@ -388,15 +388,16 @@ def static_test():
             t += j
         matrix[i].append(t % mod)
 
-    run_test(mod, solution, matrix)
+    run_test(mod,  matrix)
 
-def run_test(mod, solution, matrix):
-    print ("row = %d, col = %d" % (len(matrix), len(matrix[0])-1))
-    print ("mod = %d" % (mod))
-    print ("solution =", solution)
+def run_test(mod,  matrix,silence=True):
+    if (not silence):
+        print ("row = %d, col = %d" % (len(matrix), len(matrix[0])-1))
+        print ("mod = %d" % (mod))
+        #print ("solution =", solution)
 
-    print ("matrix =")
-    print_matrix(matrix)
+        print ("matrix =")
+        print_matrix(matrix)
 
     g = GaussMatrix(matrix, mod)
 
@@ -405,10 +406,11 @@ def run_test(mod, solution, matrix):
         print ("error:")
         print_matrix(g.d)
         print ("error_str:", g.error_str)
-    else:
+    elif not silence:
         print ("times:", g.count)
         print ("result:")
         print_matrix(ret)
+    return ret
 
 
 def DSA_comK():
@@ -476,7 +478,7 @@ def mytest():
         [3,4,0,17],
     ]
 
-    run_test(mod, solution, matrix)
+    run_test(mod, matrix)
 
 
 if __name__ == "__main__":

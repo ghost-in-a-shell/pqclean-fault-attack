@@ -4,7 +4,7 @@ import variables
 #a extract function: generate 3*3*256 a in decimal form
 def a_extract(a_str):
     res=[]
-    print("extracting a from a_str.../n")
+    print("extracting a from a_str...\n")
     print("a_str:\n"+a_str+"\n\n")
     #extract pkpv encoded
     if len(a_str)!=6912:

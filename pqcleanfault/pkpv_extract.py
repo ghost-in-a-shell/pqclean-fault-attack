@@ -4,7 +4,7 @@ import variables
 #pkpv extract function: generate 3*256 pkpv in decimal form
 def pkpv_extract(pk_str):
     res=[]
-    print("extracting pkpv from public key.../n")
+    print("extracting pkpv from public key...\n")
     print("public key:\n"+pk_str+"\n\n")
     #extract pkpv encoded
     if len(pk_str)!=2368:
